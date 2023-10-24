@@ -1,6 +1,6 @@
 import os
-from flask import Flask, send_from_directory, render_template, redirect
-
+from flask import Flask, send_from_directory, render_template, redirect, request
+import psycopg2
 app = Flask(__name__)
 
 DB_HOST = os.environ.get("your_database_host")
