@@ -74,6 +74,28 @@
             <input type="text" class="login-input" placeholder="Enter six-digit code" id="login-input">
             <button id="login-btn" onclick="login()">Login</button>
 
+
+             <!-- Login Form -->
+            <form action="/validate_login" method="post">
+                <input type="text" class="login-input" placeholder="Enter passphrase" name="passphrase" required
+                    value="{{ passphrase }}">
+                <input type="text" class="login-input" placeholder="Enter six-digit pin" name="pin" required
+                    value="{{ pin }}">
+                <button type="submit" id="login-btn">Login</button>
+            </form>
+
+            {% if error_message %}
+            <p style="color: red;">{{ error_message }}</p>
+            <p>Record does not exist. Would you like to create a login?</p>
+            <form action="/create_login" method="post">
+                <input type="hidden" name="passphrase" value="{{ passphrase }}">
+                <input type="hidden" name="pin" value="{{ pin }}">
+                <button type="submit">Yes</button>
+            </form>
+            <button onclick="alert('You can choose to login with a different passphrase/pin.')">No</button>
+            {% endif %}
+
+            
             <!-- Theme Selector -->
             <select id="theme-selector" onchange="changeTheme()">
                 <option value="british">British Green</option>
