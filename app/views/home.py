@@ -25,7 +25,7 @@ def index():
     )
 
 
-@home.route("/shorten", methods=["GET", "POST"])
+@home.route("/shorten", methods=["GET", "POST"], endpoint="shorten_url")
 @limit(datetime.timedelta(minutes=1), 20)
 def shorten_url():
     form = ShortenLinkForm({})
