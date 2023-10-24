@@ -3,8 +3,14 @@
 {% block head %}
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
     .swiper-container {
-        border: 1px solid black;
+        width: 100vw;
         height: 100vh;
     }
 
@@ -14,6 +20,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        height: 100vh;
     }
 </style>
 {% endblock %}
@@ -23,31 +30,38 @@
 <div class="swiper-container">
     <div class="swiper-wrapper">
 
-        <!-- Section 1 -->
+        <!-- Section 1 - The New York Times -->
         <div class="swiper-slide">
             <div class="into-data section-h">
-                <!-- ... (content for section 1) ... -->
+                <h2>The New York Times</h2>
+                <p>Your content from The New York Times goes here...</p>
             </div>
         </div>
 
-        <!-- Section 2 -->
+        <!-- Section 2 - The Guardian -->
         <div class="swiper-slide">
             <div class="section-h">
-                <!-- ... (content for section 2) ... -->
+                <h2>The Guardian</h2>
+                <p>Your content from The Guardian goes here...</p>
             </div>
         </div>
 
-        <!-- Section 3 -->
+        <!-- Sections 3-12 - Additional Newspapers -->
+        <!-- Repeat this structure for 10 newspapers with random text -->
+
+        <!-- Section 3 - Example -->
         <div class="swiper-slide">
             <div class="section-h grid-22">
-                <!-- ... (content for section 3) ... -->
+                <h2>Example Newspaper</h2>
+                <p>Your random text goes here...</p>
             </div>
         </div>
 
-        <!-- Section 4 -->
+        <!-- Section 4 - Example -->
         <div class="swiper-slide">
             <div class="section-h grid-22 reverse-med" style="grid-template-columns: 60% 40%;">
-                <!-- ... (content for section 4) ... -->
+                <h2>Another Example Newspaper</h2>
+                <p>Your random text goes here...</p>
             </div>
         </div>
 
