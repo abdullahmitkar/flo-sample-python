@@ -37,23 +37,23 @@ def create_app():
     # -------------------------
     # register Flask Blueprints
     # -------------------------
-    from .views.home import home
-    app.register_blueprint(home)
+    #from .views.home import home
+    #app.register_blueprint(home)
 
-    from .views.track import track
-    app.register_blueprint(track)
+    #from .views.track import track
+    #app.register_blueprint(track)
 
-    from .views.legal import legal
-    app.register_blueprint(legal)
+    #from .views.legal import legal
+    #app.register_blueprint(legal)
 
     from .views.admin import admin
     app.register_blueprint(admin)
     
-    from .views.auth import auth
-    app.register_blueprint(auth)
+    #from .views.auth import auth
+    #app.register_blueprint(auth)
 
-    from .views.api import api
-    app.register_blueprint(api)
+    #from .views.api import api
+    #app.register_blueprint(api)
 
     from .views.account import account
     app.register_blueprint(account)
