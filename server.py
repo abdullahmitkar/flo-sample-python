@@ -3,11 +3,11 @@ from flask import Flask, send_from_directory, render_template, redirect
 
 app = Flask(__name__)
 
-DB_HOST = os.environment.get("your_database_host")
-DB_PORT = os.environment.get("your_database_port")
-DB_NAME = os.environment.get("your_database_name")
-DB_USER = os.environment.get("your_database_user")
-DB_PASSWORD = os.environment.get("your_database_password")
+DB_HOST = os.environ.get("your_database_host")
+DB_PORT = os.environ.get("your_database_port")
+DB_NAME = os.environ.get("your_database_name")
+DB_USER = os.environ.get("your_database_user")
+DB_PASSWORD = os.environ.get("your_database_password")
 
 conn = psycopg2.connect(host=DB_HOST, port=DB_PORT, database=DB_NAME, user=DB_USER, password=DB_PASSWORD)
 cursor = conn.cursor()
