@@ -9,7 +9,7 @@ DB_NAME = os.environ.get("your_database_name")
 DB_USER = os.environ.get("your_database_user")
 DB_PASSWORD = os.environ.get("your_database_password")
 
-conn = psycopg2.connect(host=DB_HOST, port=DB_PORT, database=DB_NAME, user=DB_USER, password=DB_PASSWORD, ssl_mode="require")
+conn = psycopg2.connect(host=DB_HOST, port=DB_PORT, database=DB_NAME, user=DB_USER, password=DB_PASSWORD, sslmode="require")
 cursor = conn.cursor()
 
 def create_login(passphrase, pin):
