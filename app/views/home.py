@@ -47,26 +47,6 @@ def index():
 
 
 
-
-# home/routes.py
-
-from flask import Blueprint, render_template, url_for
-
-home = Blueprint("home", __name__, template_folder="templates")
-
-
-@home.route('/')
-def index():
-    section_data = [
-        {"title": "The New York Times", "content": "Content for The New York Times..."},
-        {"title": "The Guardian", "content": "Content for The Guardian..."},
-        {"title": "Example Newspaper 1", "content": "Content for Example Newspaper 1..."},
-        {"title": "Example Newspaper 2", "content": "Content for Example Newspaper 2..."},
-    ]
-    
-    return render_template("home/index.html", section_data=section_data)
-
-
 @home.route('/section/<section_title>')
 def section(section_title):
     return render_template("home/section.html", section_title=section_title)
