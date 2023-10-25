@@ -23,6 +23,28 @@ def before_auth_request():
         return redirect(url_for("Account.index"))
 
 
+@auth.route('/login', methods=['GET','POST'])
+def login():
+    form = LoginForm()
+
+    if form.validate_on_submit():
+        passphrase = form.passphrase.data
+        index = form.index.data
+
+        flash('Login successful!', 'success')
+    return redirect(url_for('Home.index'))
+        #         # Placeholder authentication logic (replace with your actual logic)
+        # if passphrase == 'your_passphrase' and index == '123456':
+        #    # Successful login, redirect to landing page
+        #    flash('Login successful!', 'success')
+        #    return redirect(url_for('home.index'))
+        #else:
+        #    # Failed login, redirect back to login page
+        #    flash('Invalid credentials. Please try again.', 'error')
+        #    return redirect(url_for('auth.login'))
+        
+    
+
 @auth.route("/")
 def index():
     return modified_render_template(
