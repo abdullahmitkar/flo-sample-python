@@ -35,7 +35,7 @@
             <div class="into-data section-h">
                 <h2>{{ section['title'] }}</h2>
                 <p>{{ section['content'] }}</p>
-                <a href="{{ url_for('home.section', section_title=section.title|lower) }}">View More</a>
+                <a href="{{ url_for('Home.section', section_title=section.title|lower) }}">View More</a>
             </div>
         </div>
         {% endfor %}
