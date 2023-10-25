@@ -17,11 +17,11 @@ import random
 auth = Blueprint("Auth", __name__, url_prefix="/auth")
 
 
-@auth.before_request
-@limit(datetime.timedelta(seconds=60), 10)
-def before_auth_request():
-    if is_user_loggedin() is True:
-        return redirect(url_for("Account.index"))
+#@auth.before_request
+#@limit(datetime.timedelta(seconds=60), 10)
+#def before_auth_request():
+#    if is_user_loggedin() is True:
+#        return redirect(url_for("Account.index"))
 
 
 @auth.route('/login', methods=['GET','POST'])
