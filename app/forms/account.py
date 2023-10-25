@@ -1,10 +1,17 @@
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, Length, Optional
 from wtforms.fields import StringField, BooleanField, EmailField
+from wtforms import StringField, PasswordField, SubmitField
+
 
 from .functions import strip_value
 from ..config import AppConfig
 
+
+class LoginForm(FlaskForm):
+    passphrase = PasswordField('Passphrase', validators=[DataRequired()])
+    index = StringField('Six-Digit Index', validators=[DataRequired(), Length(min=6, max=6)])
+    submit = SubmitField('Login')
 
 class EditAccountForm(FlaskForm):
     name = StringField(
