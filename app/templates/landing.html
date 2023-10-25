@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div id="scroll-container">
+    <div class="item" id="teacher">
+        <h2>My Teacher</h2>
+        <!-- Content about your teacher -->
+    </div>
+    <div class="item" id="entertainer">
+        <h2>My Entertainer</h2>
+        <!-- Content about your entertainer -->
+    </div>
+    <div class="item" id="tutor">
+        <h2>My Tutor</h2>
+        <!-- Content about your tutor -->
+    </div>
+    <div class="item" id="money-guy">
+        <h2>My Money Guy</h2>
+        <!-- Content about your money guy -->
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
