@@ -28,3 +28,52 @@ scrollContainer.addEventListener('scroll', () => {
         loadNextCard();
     }
 });
+
+
+// static/scripts.js
+
+const scrollContainer = document.getElementById('scroll-container');
+const sectionContent = document.getElementById('section-content');
+
+let currentPage = 1;
+
+function appendContent(content) {
+    const item = document.createElement('div');
+    item.classList.add('item');
+    item.innerHTML = content;
+    scrollContainer.appendChild(item);
+}
+
+function loadNextCard() {
+    appendContent(`
+        <h2>Page ${currentPage + 1}</h2>
+        <!-- Content for Page ${currentPage + 1} -->
+    `);
+    currentPage++;
+}
+
+loadNextCard();
+
+scrollContainer.addEventListener('scroll', () => {
+    if (scrollContainer.scrollHeight - scrollContainer.scrollTop === scrollContainer.clientHeight) {
+        loadNextCard();
+    }
+});
+
+// Swipe navigation for section content
+let touchStartX = 0;
+let touchEndX = 0;
+
+sectionContent.addEventListener('touchstart', (event) => {
+    touchStartX = event.touches[0].clientX;
+});
+
+sectionContent.addEventListener('touchend', (event) => {
+    touchEndX = event.changedTouches[0].clientX;
+
+    if (touchEndX < touchStartX) {
+        // Swipe left
+        window.history.back();
+    }
+});
+
