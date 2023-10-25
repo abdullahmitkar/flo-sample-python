@@ -64,15 +64,7 @@
     
     <div class="max-container">
         <nav>
-            <a href="{{url_for('Home.shorten_url')}}" class="{{ 'active' if request.endpoint == 'Home.shorten_url'}}">Shorten URL</a>
-            <a href="{{url_for('Track.index')}}" class="{{ 'active' if request.endpoint == 'Track.index'}}">Track ID</a>
-            <a href="{{url_for('API.api_docs')}}" class="{{ 'active' if request.endpoint == 'API.api_docs'}}">API docs</a>
-            {% if auth_status is true %}
-            <a href="{{url_for('Account.index')}}" class="{{ 'active' if (request.endpoint or '').startswith('Account.')}}">Account</a>
-            {% else %}
-            <a href="{{url_for('Auth.index')}}" class="{{ 'active' if request.endpoint == 'Auth.index'}}">Log in</a>
-            {% endif %}
-        </nav>
+           </nav>
     </div>
     <div id="to-notes">
     {% with msgs = get_flashed_messages(with_categories=false) %}
