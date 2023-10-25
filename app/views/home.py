@@ -37,8 +37,8 @@ def index():
     section_data = [
         {"title": "The New York Times", "content": "Content for The New York Times..."},
         {"title": "The Guardian", "content": "Content for The Guardian..."},
-        {"title": "Example Newspaper 1", "content": "Content for Example Newspaper 1..."},
-        {"title": "Example Newspaper 2", "content": "Content for Example Newspaper 2..."},
+        {"title": "tutor", "content": "Content for Example Newspaper 1..."},
+        {"title": "Quran", "content": "Content for Example Newspaper 2..."},
     ]
     
     return modified_render_template(
