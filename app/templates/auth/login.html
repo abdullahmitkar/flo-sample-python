@@ -1,0 +1,8 @@
+<!-- auth/login.html -->
+<form action="{{ url_for('auth.login') }}" method="post">
+    <!-- Input fields for passphrase and pin -->
+    <input type="password" name="passphrase" required>
+    <input type="text" name="pin" required>
+    <!-- Submit button -->
+    <input type="submit" value="Login">
+</form>
