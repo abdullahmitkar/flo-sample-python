@@ -49,7 +49,7 @@ def index():
 
 @home.route('/section/<section_title>')
 def section(section_title):
-    return render_template("home/section.html", section_title=section_title)
+    return modified_render_template("home/section.html", section_title=section_title)
 
 
 @home.route('/api/course-catalog')
