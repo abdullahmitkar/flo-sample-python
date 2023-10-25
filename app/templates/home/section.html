@@ -3,7 +3,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div id="section-content">
+    <div style="border:1px solid black" id="section-content">
         <h2>{{ section_title }}</h2>
         {% if section_title == 'tutor' %}
             <a href="{{ url_for('Home.course_catalog') }}">Course Catalog</a>
