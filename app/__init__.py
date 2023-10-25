@@ -84,7 +84,7 @@ def create_app():
     # misc routes for sending files
     # --------------------------------------------------
 
-    @app.route('/')
+    @app.route('/landing')
     def landing():
         return render_template('landing.html')
     
