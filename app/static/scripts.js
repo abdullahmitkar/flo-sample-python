@@ -1,15 +1,5 @@
 const scrollContainer = document.getElementById('scroll-container');
-
-// Simulated data for each section
-const teacherContent = "Your teacher information goes here.";
-const entertainerContent = "Your entertainer information goes here.";
-const tutorContent = "Your tutor information goes here.";
-const moneyGuyContent = "Your money guy information goes here.";
-
-// Function to check if the user has scrolled to the bottom
-function isScrolledToBottom() {
-    return scrollContainer.scrollHeight - scrollContainer.scrollTop === scrollContainer.clientHeight;
-}
+let currentPage = 1;
 
 // Function to append content to the scroll container
 function appendContent(content) {
@@ -19,16 +9,22 @@ function appendContent(content) {
     scrollContainer.appendChild(item);
 }
 
-// Initial content
-appendContent(teacherContent);
-appendContent(entertainerContent);
-appendContent(tutorContent);
-appendContent(moneyGuyContent);
+// Function to load the next card
+function loadNextCard() {
+    appendContent(`
+        <h2>Page ${currentPage + 1}</h2>
+        <!-- Content for Page ${currentPage + 1} -->
+    `);
+    currentPage++;
+}
 
-// Event listener for infinite scrolling
+// Initial content
+loadNextCard();
+
+// Event listener for loading next card on scroll
 scrollContainer.addEventListener('scroll', () => {
-    if (isScrolledToBottom()) {
-        // Append more content when scrolled to the bottom
-        appendContent('More content goes here.');
+    if (scrollContainer.scrollHeight - scrollContainer.scrollTop === scrollContainer.clientHeight) {
+        // Load the next card when scrolled to the bottom
+        loadNextCard();
     }
 });
