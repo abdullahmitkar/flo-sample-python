@@ -30,7 +30,7 @@ def login():
 
     if form.validate_on_submit():
         passphrase = form.passphrase.data
-        index = form.index.data
+        pin = form.pin.data
 
         flash('Login successful!', 'success')
         return redirect(url_for('Home.index'))
