@@ -84,9 +84,6 @@ def create_app():
     # misc routes for sending files
     # --------------------------------------------------
 
-    @app.route('/landing')
-    def landing():
-        return render_template('landing.html')
     
     @app.route('/googled75d43e26e15ddd9.html')
     @app.route('/sitemap.xml')
