@@ -10,7 +10,7 @@ from ..config import AppConfig
 
 class LoginForm(FlaskForm):
     passphrase = PasswordField('Passphrase', validators=[DataRequired()])
-    pin = StringField('Six-Digit Index', validators=[DataRequired(), Length(min=6, max=6)])
+    pin = StringField('Pin', validators=[DataRequired(), Length(min=6, max=6)])
     submit = SubmitField('Login')
 
 class EditAccountForm(FlaskForm):
