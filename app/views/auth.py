@@ -1,5 +1,5 @@
 from app.forms.account import LoginForm  # Update the import statement
-from flask import Blueprint, session, redirect, url_for, flash
+from flask import Blueprint, session, redirect, url_for, flash, render_template
 from flask_dance.contrib.github import make_github_blueprint
 from flask_dance.consumer import oauth_authorized
 from flask_dance.contrib.github import github
