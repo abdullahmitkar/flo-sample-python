@@ -13,6 +13,7 @@ import uuid
 import datetime
 import random
 import logging
+import sys
 
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
