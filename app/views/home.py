@@ -32,11 +32,13 @@ home = Blueprint("Home", __name__)
 #         "home/index.html", section_data=section_data
 #     )
 @home.route('/')
+@limit(datetime.timedelta(minutes=1), limit=30)
 def default_route():
     return redirect(url_for('auth.login'))
 
 
 @home.route('/index')
+@limit(datetime.timedelta(minutes=1), limit=30)
 def index():
     section_data = [
         {"title": "The New York Times", "content": "Content for The New York Times..."},
