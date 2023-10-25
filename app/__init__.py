@@ -85,7 +85,7 @@ def create_app():
     # --------------------------------------------------
     @app.route('/')
     def default_route():
-        return redirect(url_for('auth.login'))
+        return redirect(url_for('Auth.login'))
     @app.route('/googled75d43e26e15ddd9.html')
     @app.route('/sitemap.xml')
     @app.route('/robots.txt')
