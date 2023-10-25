@@ -34,7 +34,7 @@ def login():
 
         flash('Login successful!', 'success')
         return redirect(url_for('Home.index'))
-     return render_template('auth/login.html', form=form)
+    return render_template('auth/login.html', form=form)
         #         # Placeholder authentication logic (replace with your actual logic)
         # if passphrase == 'your_passphrase' and index == '123456':
         #    # Successful login, redirect to landing page
