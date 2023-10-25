@@ -12,8 +12,10 @@ from ..limiter import limit
 import uuid
 import datetime
 import random
+import logging
 
 
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 auth = Blueprint("Auth", __name__, url_prefix="/auth")
 
 
@@ -31,6 +33,8 @@ def login():
     if form.validate_on_submit():
         passphrase = form.passphrase.data
         pin = form.pin.data
+        
+        logging.info(f'Login form submitted - Passphrase: {passphrase}, Pin: {pin}')
 
         flash('Login successful!', 'success')
         return redirect(url_for('Home.index'))
