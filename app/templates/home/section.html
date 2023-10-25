@@ -6,8 +6,8 @@
     <div id="section-content">
         <h2>{{ section_title }}</h2>
         {% if section_title == 'tutor' %}
-            <a href="{{ url_for('home.course_catalog') }}">Course Catalog</a>
-            <a href="{{ url_for('home.user_reports') }}">User Reports</a>
+            <a href="{{ url_for('Home.course_catalog') }}">Course Catalog</a>
+            <a href="{{ url_for('Home.user_reports') }}">User Reports</a>
         {% elif section_title == 'quran' %}
             <!-- Content for Quran section -->
         {% endif %}
