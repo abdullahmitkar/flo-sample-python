@@ -34,7 +34,7 @@ home = Blueprint("Home", __name__)
 @home.route('/')
 @limit(datetime.timedelta(minutes=1), limit=30)
 def default_route():
-    return redirect(url_for('auth.login'))
+    return redirect(url_for('Auth.login'))
 
 
 @home.route('/index')
